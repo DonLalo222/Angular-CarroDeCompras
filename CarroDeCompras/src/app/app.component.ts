@@ -10,11 +10,15 @@ import { ProductosService } from './services/productos.service';
 export class AppComponent {
   title = 'CarroDeCompras';
   items: Array<Producto> = [];
+  producto: Producto | undefined;
 
-  constructor(productosService: ProductosService){
+  constructor( private productosService: ProductosService){
     //
-    this.items = productosService.getAll();
+    this.items = this.productosService.getAll();
+  }
 
+  find(id: string){
+    this.producto = this.productosService.find(id);
   }
 
 

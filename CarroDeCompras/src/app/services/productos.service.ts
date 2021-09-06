@@ -6,19 +6,21 @@ import { Producto } from '../interfaces/producto';
   providedIn: 'root'
 })
 export class ProductosService {
-  productosTemp: any = [];
   productos: Array<Producto> = [];
-  constructor() { 
 
-    this.productosTemp = data;
-    for(let item in this.productosTemp.items){
+  constructor() {
+
+    let productosTemp: any = data;
+    //
+    for(let item in productosTemp.items){
       let prod = {} as Producto;
-      prod._id = this.productosTemp.items[item]._id;
-      prod.description = this.productosTemp.items[item].description;
-      prod.name = this.productosTemp.items[item].name;
-      prod.picture = this.productosTemp.items[item].picture;
-      prod.price = this.productosTemp.items[item].price;
-      prod.stock = this.productosTemp.items[item].stock;
+
+      prod._id = productosTemp.items[item]._id;
+      prod.description = productosTemp.items[item].description;
+      prod.name = productosTemp.items[item].name;
+      prod.picture = productosTemp.items[item].picture;
+      prod.price = productosTemp.items[item].price;
+      prod.stock = productosTemp.items[item].stock;
       //
       this.productos.push(prod);
     }
@@ -27,5 +29,15 @@ export class ProductosService {
 
   getAll(): Array<Producto>{
     return this.productos;
+  }
+
+  find(id: string){
+    let producto: Producto | undefined;
+    this.productos.forEach((p: Producto) =>{
+      if(p._id === id){
+        producto = p;
+      }
+    });
+    return producto;
   }
 }
