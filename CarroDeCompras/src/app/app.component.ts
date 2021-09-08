@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Producto } from './interfaces/producto';
 import { ProductosService } from './services/productos.service';
 
@@ -20,6 +20,10 @@ export class AppComponent {
   find(id: string){
     this.producto = this.productosService.find(id);
   }
+
+
+
+
 
 
 }

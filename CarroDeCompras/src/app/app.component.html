@@ -30,7 +30,7 @@
             <form class="d-flex">
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
-                    Cart
+                    Carrito
                     <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                 </button>
             </form>
@@ -60,7 +60,7 @@
             <div class="col mb-5" *ngFor="let item of items">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="{{ item.picture }}" alt="..." />
+                    <img class="card-img-top img-lista" src="{{ item.picture }}" alt="imagen producto" />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
@@ -73,9 +73,13 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
+                          <button type="button" class="btn btn-outline-success mt-auto m-2" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" (click)="find(item._id)">
+                                Agregar al Carrito
+                            </button>
                             <button type="button" class="btn btn-outline-dark mt-auto" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal" (click)="find(item._id)">
-                                Opciones
+                                Detalles
                             </button>
                         </div>
                     </div>
@@ -98,15 +102,34 @@ tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         </div>
         <div class="modal-body">
           <div *ngIf="producto">
-            {{producto.name}}
+            <div class="row">
+                <div class="col text-center">
+                    <img src="{{producto.picture}}" class="img-detalles" alt="imagen producto">
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      {{producto.name}}
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">{{producto.description}}</p>
+                      <hr>
+                      <h5 class="fw-light">
+                        {{producto.price}}
+                      </h5>
+                      {{producto.stock}} en stock.
+                    </div>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                Close
+                Cerrar
             </button>
             <button type="button" class="btn btn-primary">
-                Save changes
+                Agregar Al Carrito
             </button>
         </div>
     </div>
