@@ -1,0 +1,42 @@
+<app-navbar [cartLength]="cartLength"></app-navbar>
+<app-header [title]="title" [subtitle]="subtitle"></app-header>
+<!-- product cart list -->
+<hr>
+<div class="container" *ngIf="list">
+  <button class="btn btn-primary" (click)="removeData()">Vaciar Carrito</button>
+      <!-- table list products -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio Unitario</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let product of listFormated">
+            <th scope="row">{{product.id}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.subtotal}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="removeProductById(product.id)">Quitar</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="table-warning">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="fw-bold">Total: {{total}}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+</div>

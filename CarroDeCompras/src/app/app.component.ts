@@ -1,6 +1,9 @@
-import { Component, Input } from '@angular/core';
-import { Producto } from './interfaces/producto';
-import { ProductosService } from './services/productos.service';
+import { Component } from '@angular/core';
+import { Product } from './interfaces/product';
+import { ProductSelected } from './interfaces/product-selected';
+import { CartService } from './services/cart.service';
+import { ProductService } from './services/product.service';
+import { NumberFormat } from "./utils/number-format";
 
 @Component({
   selector: 'app-root',
@@ -8,17 +11,12 @@ import { ProductosService } from './services/productos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CarroDeCompras';
-  items: Array<Producto> = [];
-  producto: Producto | undefined;
-
-  constructor( private productosService: ProductosService){
+  title = 'Carro De Compras';
+  subtitle = 'ejemplo carro de compras Angular';
+  cartLength: number = 0;
+  constructor(private cartService: CartService) {
     //
-    this.items = this.productosService.getAll();
-  }
-
-  find(id: string){
-    this.producto = this.productosService.find(id);
+    this.cartLength = this.cartService.getProductsQuantity();
   }
 
 
