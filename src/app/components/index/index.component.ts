@@ -10,8 +10,8 @@ import { NumberFormat } from 'src/app/utils/number-format';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  title = 'Carro De Compras';
-  subtitle = 'Productos';
+  title = 'Product list';
+  subtitle = 'Add To Cart';
   products: Array<Product> = [];
   productDetails: Product | undefined;
   cartLength: number = 0;

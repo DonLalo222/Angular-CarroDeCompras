@@ -3,17 +3,17 @@
 <!-- product cart list -->
 <hr>
 <div class="container" *ngIf="list">
-  <button class="btn btn-primary" (click)="removeData()">Vaciar Carrito</button>
+  <button class="btn btn-primary" (click)="removeData()">Remove Items</button>
       <!-- table list products -->
       <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Precio Unitario</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Unit Price</th>
             <th scope="col">Subtotal</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>

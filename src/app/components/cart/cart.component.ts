@@ -10,8 +10,8 @@ import { NumberFormat } from 'src/app/utils/number-format';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  title: string = 'Carro de Compras';
-  subtitle: string = 'Detalles';
+  title: string = 'Cart';
+  subtitle: string = 'Details';
   //
   cartLength: number = 0;
   list: Array<ProductSelected> = [];
