@@ -24,19 +24,21 @@
             <td>{{product.price}}</td>
             <td>{{product.subtotal}}</td>
             <td>
-              <button class="btn btn-danger" (click)="removeProductById(product.id)">Quitar</button>
+              <button class="btn btn-danger" (click)="removeProductById(product.id)">Remove</button>
             </td>
           </tr>
         </tbody>
         <tfoot>
-          <tr class="table-warning">
+          <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td class="fw-bold">Total: {{total}}</td>
+            <td class="cart-total">Total: {{total}}</td>
             <td></td>
           </tr>
         </tfoot>
       </table>
+      <br>
+
 </div>

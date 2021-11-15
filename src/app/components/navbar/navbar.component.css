@@ -1,0 +1,9 @@
+nav{
+  background-color: #ffffff;
+  border-bottom: 1px grey solid;
+}
+
+.site-name{
+font-weight: bold;
+font-size: x-large;
+}

@@ -10,7 +10,7 @@
         justify-content-center
       ">
       <div class="col mb-5" *ngFor="let item of products">
-        <div class="card h-100">
+        <div class="card h-100 shadow">
             <!-- Product image-->
             <img class="card-img-top img-lista" src="{{ item.picture }}" alt="imagen producto" />
             <!-- Product details-->
@@ -60,8 +60,8 @@ tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 </div>
                 <div class="col">
                   <div class="card">
-                    <div class="card-header">
-                      {{productDetails.name}}
+                    <div class="card-header details-product">
+                        {{productDetails.name}}
                     </div>
                     <div class="card-body">
                       <p class="card-text">{{productDetails.description}}</p>
